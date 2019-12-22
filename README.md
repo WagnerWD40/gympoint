@@ -23,6 +23,7 @@ npx sequelize-cli db:seed:all
 # The Front End
 
 ![](https://github.com/WagnerWD40/gympoint/blob/master/github-images/web-01.png)
+
 ![](https://github.com/WagnerWD40/gympoint/blob/master/github-images/web-02.png)
 
 ### How to run
