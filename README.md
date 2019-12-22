@@ -47,7 +47,7 @@ cd gympointMobile
 npm install
 ```
 
-and with your choosen android emulator from Android Studio open.
+And with your choosen android emulator from Android Studio open:
 
 ```
 npx react-native run-android
