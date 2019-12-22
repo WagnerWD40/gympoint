@@ -3,8 +3,6 @@ import { Alert } from 'react-native';
 
 import { UserContext } from '../../store/UserContext';
 
-import Icon from 'react-native-vector-icons/MaterialIcons';
-
 import { 
     Container,
     ButtonView,
@@ -77,11 +75,4 @@ export default function CheckIn() {
             />
         </Container>
     );
-};
-
-CheckIn.navigationOptions = {
-    tabBarLabel: 'Check-ins',
-    tabBarIcon: ({ tintColor }) => (
-        <Icon name='edit-location' size={24} color={tintColor} />
-    ),
 };

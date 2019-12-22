@@ -22,6 +22,8 @@ npx sequelize-cli db:seed:all
 
 # The Front End
 
+[test](./images/web-01.png)
+
 ### How to run
 
 ```

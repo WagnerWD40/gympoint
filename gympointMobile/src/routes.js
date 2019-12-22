@@ -71,5 +71,5 @@ const HelpStack = createStackNavigator({
             <Icon name='live-help' size={24} color={tintColor} />
         ), 
     },
-});
+},);
 

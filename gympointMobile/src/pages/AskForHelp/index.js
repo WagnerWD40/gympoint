@@ -1,12 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { TouchableOpacity, FlatList } from 'react-native';
-import AsyncStorage from '@react-native-community/async-storage';
+import { TouchableOpacity } from 'react-native';
 
 import { UserContext } from '../../store/UserContext';
 
 import { Container, OrderList, ButtonView } from './styles';
-
-import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Button from '../../components/Button';
 import HelpOrder from '../../components/HelpOrder';
@@ -64,11 +61,4 @@ export default function AskForHelp({ navigation }) {
             />
         </Container>
     );
-};
-
-AskForHelp.navigationOptions = {
-    tabBarLabel: 'Pedir ajuda',
-    tabBarIcon: ({ tintColor }) => (
-        <Icon name='live-help' size={24} color={tintColor} />
-    ),
 };
