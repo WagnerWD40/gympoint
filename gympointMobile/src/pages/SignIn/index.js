@@ -18,8 +18,9 @@ export default function SignIn({ navigation }) {
     async function handleSubmit() {
         try {
             await AsyncStorage.setItem('@gympoint', input);
+            // await AsyncStorage.removeItem('@gympoint');
 
-            setId(input)
+            setId(input);
 
             navigation.navigate('CheckIn');
         } catch (err) {

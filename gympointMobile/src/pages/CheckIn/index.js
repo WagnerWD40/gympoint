@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
+import { Alert } from 'react-native';
 
 import { UserContext } from '../../store/UserContext';
 
@@ -25,17 +25,21 @@ export default function CheckIn() {
         async function loadCheckIns() {
             const res = await api.get(`students/${id}/checkins`);
 
-            setCheckIns(res.data);
+            const formattedCheckins = res.data.map(checkIn => ({
+                ...checkIn,
+                index: res.data.indexOf(checkIn) + 1,
+            }));
+
+            setCheckIns(formattedCheckins.reverse());
         };
 
         loadCheckIns();
 
-    }, [id]);
+    }, [checkIns]);
 
     async function handleCheckIn() {
         try {
             const res = await api.post(`students/${id}/checkins`);
-
 
             setCheckIns([
                 ...checkIns,
@@ -44,6 +48,13 @@ export default function CheckIn() {
 
         } catch (err) {
             console.log(err);
+            Alert.alert(
+                'Erro',
+                'Você só pode realizar 5 check-ins a cada 7 dias!',
+                [
+                  {text: 'OK'},
+                ],
+              );
         };     
     };
 
@@ -56,9 +67,9 @@ export default function CheckIn() {
             </ButtonView>
 
             <List
-                data={checkIns.reverse()}
+                data={checkIns}
                 renderItem={({ item }) => (
-                    <SingleCheckIn data={item} />           
+                    <SingleCheckIn data={item}  />           
                 )}
                 keyExtractor={item => String(item.id)}
                 extraData={checkIns}

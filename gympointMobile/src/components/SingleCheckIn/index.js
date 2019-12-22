@@ -14,7 +14,7 @@ export default function SingleCheckIn({ data }) {
 
     return (
         <CheckIn>           
-            <Left>Check-In #{String(data.id)}</Left>
+            <Left>Check-In #{String(data.index)}</Left>
             <Right>{dateParsed}</Right>
         </CheckIn>
     );

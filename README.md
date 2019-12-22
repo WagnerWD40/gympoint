@@ -1,16 +1,16 @@
 # Gympoint
 
-A gym management software learnt at Rocket Seat's GoStack Bootcamp.
+A gym management software for the Rocket Seat's GoStack Bootcamp.
 
 # The Backend
 
 ### How to run
 
-'''
+```
 cd backend
 npm install
 npm run dev
-'''
+```
 
 * It will run in your port 3333.
 
@@ -45,7 +45,7 @@ and with your choosen android emulator from Android Studio open.
 npx react-native run-android
 ```
 
-*in linux it only worked with a metro server running in background with:
+* in linux it only worked with a metro server running in background with:
 
 ```
 npm start
