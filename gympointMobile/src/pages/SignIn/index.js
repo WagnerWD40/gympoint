@@ -1,6 +1,5 @@
 import React, { useState, useContext } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import * as Yup from 'yup';
 
 import { UserContext } from '../../store/UserContext';
 
@@ -18,7 +17,6 @@ export default function SignIn({ navigation }) {
     async function handleSubmit() {
         try {
             await AsyncStorage.setItem('@gympoint', input);
-            // await AsyncStorage.removeItem('@gympoint');
 
             setId(input);
 

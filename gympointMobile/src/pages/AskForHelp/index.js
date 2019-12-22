@@ -3,7 +3,11 @@ import { TouchableOpacity } from 'react-native';
 
 import { UserContext } from '../../store/UserContext';
 
-import { Container, OrderList, ButtonView } from './styles';
+import {
+    Container,
+    OrderList,
+    ButtonView
+} from './styles';
 
 import Button from '../../components/Button';
 import HelpOrder from '../../components/HelpOrder';
@@ -19,7 +23,7 @@ export default function AskForHelp({ navigation }) {
 
         loadHelpOrders();
 
-    }, []);
+    }, [helpOrders]);
 
     async function loadHelpOrders() {
         const res = await api.get(`students/${id}/help-orders`);
@@ -45,19 +49,19 @@ export default function AskForHelp({ navigation }) {
 
             <OrderList
                 data={helpOrders}
-                windowSize={5}
-                initialListSize={5}
-                initialNumToRender={5}
-                maxToRenderPerBatch={6}
-                removeClippedSubviews  // optional
+                extraData={helpOrders}
+                removeClippedSubviews
                 renderItem={({ item })  => (
-                    <TouchableOpacity onPress={() => handlePressOrder(item)}>
+                    <TouchableOpacity
+                        onPress={() => handlePressOrder(item)}
+                        style={{height: 150}}
+                    >
                         <HelpOrder data={item} />
                     </TouchableOpacity>
                 )}
                 keyExtractor={item => String(item.id)}
                 showsVerticalScrollIndicator={false}
-                extraData={helpOrders}
+                
             />
         </Container>
     );

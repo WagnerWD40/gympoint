@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { Alert } from 'react-native';
+import { Alert, ActivityIndicator } from 'react-native';
 
 import { UserContext } from '../../store/UserContext';
 
@@ -7,6 +7,7 @@ import {
     Container,
     ButtonView,
     List,
+    AIView,
 } from './styles';
 
 import Button from '../../components/Button';
@@ -16,6 +17,7 @@ import api from '../../services/api';
 
 export default function CheckIn() {
     const [ checkIns, setCheckIns ] = useState([]);
+    const [ loading, setLoading ] = useState(false);
 
     const { id } = useContext(UserContext);
 
@@ -36,6 +38,8 @@ export default function CheckIn() {
     }, [checkIns]);
 
     async function handleCheckIn() {
+        setLoading(true);
+
         try {
             const res = await api.post(`students/${id}/checkins`);
 
@@ -53,14 +57,25 @@ export default function CheckIn() {
                   {text: 'OK'},
                 ],
               );
-        };     
+        }; 
+        
+        setLoading(false);
     };
 
     return (
         <Container>
             <ButtonView>
                 <Button onPress={handleCheckIn}>
-                    Novo check-in
+                    {loading ? (
+                        <AIView>
+                            <ActivityIndicator
+                                size='large'
+                                color='#FFF'
+                            />
+                        </AIView>
+                    ) : (
+                        'Novo check-in' 
+                    )}
                 </Button>
             </ButtonView>
 
