@@ -27,6 +27,7 @@ export default function NewQuestion({ navigation }) {
                 placeholder='Inclua seu pedido de auxílio'
                 onChangeText={setQuestion}
                 value={question}
+                style={{ textAlignVertical: 'top' }}
             />
 
             <Button onPress={handleSubmit}>

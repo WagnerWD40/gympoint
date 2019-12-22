@@ -11,4 +11,5 @@ export const TextArea = styled.TextInput`
     border-radius: 4px;
     border: 1px solid #ccc;
     margin-bottom: 16px;
+    font-size: 16px;
 `;
