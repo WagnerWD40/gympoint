@@ -44,6 +44,7 @@ class RegistryController {
             subject: 'Nova matrícula',
             template: 'greetings',
             context: {
+                studentId: student_id,
                 studentName: student.name,
                 planName: plan.title,
                 planPrice: plan.price,

@@ -1,7 +1,52 @@
-<p>Olá, {{ studentName }},</p>
-<p>
-    <p>Você está inscrito no plano: <strong>{{ planName }}</strong></p>
-    <p>O valor mensal será: <strong>R$ {{ planPrice }}</strong></p>
-    <p>Seu plano é válido até: <strong>{{ planEndDate }}</strong></p>
-</p>
-<p><strong>Seja bem vindo à Gympoint!</strong></p>
+<div style="
+    margin-top: 80px;
+    font-size: 16px;
+    color: #333;
+    max-width: 600px;
+    font-family: Arial, Helvetica, sans-serif;
+    "
+>
+    <p style='
+        font-weight: 200;
+        color: #333;
+        '
+    >
+        Olá, <strong>{{ studentName }}</strong>, sua matrícula conosco foi concluída com sucesso!
+    </p>
+    <table>
+        <tr style='background: #eee;'>
+            <td>
+                Sua ID de cadastro é:
+            </td>
+            <td style='text-align: center; padding-left: 10px;'>
+                <strong>{{ studentId }}</strong>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Você está inscrito no plano:
+            </td>
+            <td style='text-align: center; padding-left: 10px;'>
+                <strong>{{ planName }}</strong></p>
+            </td>
+        </tr>
+        <tr style='background: #eee;'>
+            <td>
+                <p>O valor mensal será:
+            </td>
+            <td style='text-align: center; padding-left: 10px;'>
+                <strong>R$ {{ planPrice }}</strong></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Seu plano é válido até:
+            </td>
+            <td style='text-align: center; padding-left: 10px;'>
+                <strong>{{ planEndDate }}</strong></p>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <p><strong>Seja bem vindo à Gympoint!</strong></p>
+</div>
