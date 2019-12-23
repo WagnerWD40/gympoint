@@ -22,3 +22,8 @@ export const Input = styled.TextInput`
     border: 1px solid #ccc;
     border-radius: 4px;
 `;
+
+export const AIView = styled.View`
+    height: 30px;
+    width: 30px;
+`;

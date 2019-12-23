@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 export default function AnswerCheck({ navigation }) {
-    const { question, answer, createdAt } = navigation.getParam('item')
+    const { question, answer, createdAt } = navigation.getParam('item');
 
     const dateParsed = useMemo(() => {
         return formatRelative(parseISO(createdAt), new Date, {
