@@ -32,7 +32,9 @@ export default function AskForHelp({ navigation }) {
     };
 
     function handleNewQuestion() {
-        navigation.navigate('QuestionScreen', { id, onSubmit: () => loadHelpOrders()});
+        navigation.navigate('QuestionScreen',
+            { id, onSubmit: () => loadHelpOrders()}
+        );
     };
 
     function handlePressOrder(item) {
@@ -60,8 +62,7 @@ export default function AskForHelp({ navigation }) {
                     </TouchableOpacity>
                 )}
                 keyExtractor={item => String(item.id)}
-                showsVerticalScrollIndicator={false}
-                
+                showsVerticalScrollIndicator={false}              
             />
         </Container>
     );

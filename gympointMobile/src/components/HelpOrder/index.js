@@ -28,14 +28,22 @@ export default function HelpOrder({ data }) {
                     {
                         data.answer ? (
                         <>
-                            <Icon name='check-circle' size={20} color='#61cc59' />
+                            <Icon
+                                name='check-circle'
+                                size={20}
+                                color='#61cc59'
+                            />
                             <AnswerStatusText style={{ color: '#61cc59' }}>
                                 Respondido
                             </AnswerStatusText>
                         </>
                         ) : (
                         <>
-                            <Icon name='check-circle' size={20} color='#ccc' />
+                            <Icon
+                                name='check-circle'
+                                size={20}
+                                color='#ccc'
+                            />
                             <AnswerStatusText style={{ color: '#ccc' }}>
                                 Sem Resposta
                             </AnswerStatusText>

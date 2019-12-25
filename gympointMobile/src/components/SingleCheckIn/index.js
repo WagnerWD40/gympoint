@@ -5,6 +5,7 @@ import ptBR from 'date-fns/locale/pt-BR';
 import { CheckIn, Left, Right } from './styles';
 
 export default function SingleCheckIn({ data }) {
+    
     const dateParsed = useMemo(() => {
         return formatRelative(parseISO(data.createdAt), new Date, {
             locale: ptBR,

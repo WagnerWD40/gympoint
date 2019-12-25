@@ -12,7 +12,7 @@ export default function NewQuestion({ navigation }) {
     const id = navigation.getParam('id')
 
     async function handleSubmit() {
-        const res = await api.post(`students/${id}/help-orders`, { question });
+        await api.post(`students/${id}/help-orders`, { question });
 
         setQuestion('');
         navigation.state.params.onSubmit();

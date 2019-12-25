@@ -12,7 +12,7 @@ import {
     AnswerHeader,
 } from './styles';
 
-export default function AnswerCheck({ navigation }) {
+export default function AnswerCheck({ navigation }) {  
     const { question, answer, createdAt } = navigation.getParam('item');
 
     const dateParsed = useMemo(() => {
